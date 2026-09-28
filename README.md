@@ -128,7 +128,7 @@ Uygulama `http://localhost:3000` adresinde açılır.
 
 ### Giriş yapmış kullanıcı
 
-- Kayıt olma ve giriş yapma (JWT, 24 saat geçerli)
+- Kayıt olma ve giriş yapma (JWT, 3 saat geçerli)
 - Yazıya yorum ekleme
 - Kendi yorumunu düzenleme ve silme
 
@@ -183,3 +183,4 @@ Swagger üzerinden tüm şema görülebilir. Özet:
 - `src/App.test.tsx` hâlâ Create React App şablonundan gelen "learn react" testini içeriyor ve başarısız olur.
 - Yorumlar için `ParentCommentId` alanı ve `About` tablosu şemada tanımlı; iç içe yorum arayüzü henüz frontend'de yok.
 - CORS politikası tüm kaynaklara açık (`AllowAnyOrigin`), bu yalnızca geliştirme içindir.
+- `appsettings.json` içindeki `Jwt:ExpiresInHours` (24) okunmuyor; `JwtService` süreyi kodda `AddHours(3)` olarak sabitliyor. Token ömrü 3 saattir.

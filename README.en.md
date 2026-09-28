@@ -128,7 +128,7 @@ The app runs at `http://localhost:3000`.
 
 ### Signed-in users
 
-- Register and log in (JWT, valid 24 hours)
+- Register and log in (JWT, valid 3 hours)
 - Add comments to posts
 - Edit and delete their own comments
 
@@ -183,3 +183,4 @@ The full schema is available through Swagger. Summary:
 - `src/App.test.tsx` still contains the Create React App template "learn react" test and will fail.
 - `ParentCommentId` on comments and the `About` table are defined in the schema, but there is no nested-comment UI in the frontend yet.
 - The CORS policy allows any origin (`AllowAnyOrigin`); this is development-only.
+- `Jwt:ExpiresInHours` (24) in `appsettings.json` is never read; `JwtService` hardcodes the lifetime as `AddHours(3)`. The token lifetime is 3 hours.
